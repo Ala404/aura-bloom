@@ -39,7 +39,7 @@ const HeroSection = ({ heroImage }: HeroSectionProps) => {
         </h1>
 
         <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up-delay-1 font-body">
-          AuraFrammer lets you farm the presence of iconic characters by simply
+          AuraFarmer lets you farm the presence of iconic characters by simply
           clicking them.
         </p>
 

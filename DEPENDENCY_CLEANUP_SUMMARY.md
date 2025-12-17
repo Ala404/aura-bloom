@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document summarizes the dependency cleanup performed on the AuraFrammer project to reduce unnecessary packages while maintaining the exact same look and behavior of the website.
+This document summarizes the dependency cleanup performed on the AuraFarmer project to reduce unnecessary packages while maintaining the exact same look and behavior of the website.
 
 ## Changes Made
 

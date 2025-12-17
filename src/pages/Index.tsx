@@ -155,7 +155,7 @@ const Index = () => {
       <footer className="py-12 px-6 border-t border-border">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-muted-foreground font-body text-sm">
-            AuraFrammer — A tribute to legendary presence.
+            AuraFarmer — A tribute to legendary presence.
           </p>
           <p className="text-muted-foreground/50 font-body text-xs mt-2">
             Made for the culture. Click responsibly.
