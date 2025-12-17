@@ -3,6 +3,7 @@ import CharacterCard from "./CharacterCard";
 interface Character {
   name: string;
   image: string;
+  image2?: string;
   maxAura: number;
   audioUrl?: string;
 }
@@ -27,8 +28,8 @@ const CharactersGallery = ({ characters }: CharactersGalleryProps) => {
             The <span className="text-gradient">Aura</span> Gallery
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto font-body">
-            Click on any character to farm their aura. Reach the maximum to unlock
-            their iconic moment.
+            Click on any character to farm their aura. Reach the maximum to
+            unlock their iconic moment.
           </p>
         </div>
 
@@ -43,6 +44,7 @@ const CharactersGallery = ({ characters }: CharactersGalleryProps) => {
               <CharacterCard
                 name={character.name}
                 image={character.image}
+                image2={character.image2}
                 maxAura={character.maxAura}
                 audioUrl={character.audioUrl}
               />

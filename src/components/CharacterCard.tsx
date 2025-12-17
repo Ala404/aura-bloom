@@ -9,11 +9,18 @@ interface FloatingNumber {
 interface CharacterCardProps {
   name: string;
   image: string;
+  image2?: string;
   maxAura: number;
   audioUrl?: string;
 }
 
-const CharacterCard = ({ name, image, maxAura, audioUrl }: CharacterCardProps) => {
+const CharacterCard = ({
+  name,
+  image,
+  image2,
+  maxAura,
+  audioUrl,
+}: CharacterCardProps) => {
   const [aura, setAura] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
   const [isPulsing, setIsPulsing] = useState(false);
@@ -67,23 +74,40 @@ const CharacterCard = ({ name, image, maxAura, audioUrl }: CharacterCardProps) =
     <div
       ref={cardRef}
       onClick={handleClick}
-      className={`character-card aspect-[3/4] relative group ${
+      className={`character-card aspect-[3/4] relative group transition-all duration-700 ${
         isPulsing ? "animate-pulse-glow" : ""
-      } ${isComplete ? "ring-2 ring-aura-gold" : ""}`}
+      } ${
+        isComplete ? "ring-2 ring-aura-gold scale-[1.02] shadow-2xl z-50" : ""
+      }`}
     >
-      {/* Character Image */}
+      {/* Character Image 1 (Base) */}
       <img
         src={image}
         alt={name}
-        className={`w-full h-full object-cover transition-all duration-500 ${
-          isComplete ? "brightness-110 saturate-110" : "group-hover:brightness-110"
+        className={`w-full h-full object-cover transition-all duration-1000 absolute inset-0 ${
+          isComplete && image2 ? "opacity-0 scale-95" : "opacity-100 scale-100"
+        } ${
+          isComplete
+            ? "brightness-110 saturate-110"
+            : "group-hover:brightness-110"
         }`}
       />
 
+      {/* Character Image 2 (Aura Unlocked) */}
+      {image2 && (
+        <img
+          src={image2}
+          alt={`${name} unlocked`}
+          className={`w-full h-full object-cover transition-all duration-1000 absolute inset-0 ${
+            isComplete ? "opacity-100 scale-100" : "opacity-0 scale-105"
+          } brightness-125 saturate-125 glow-primary`}
+        />
+      )}
+
       {/* Overlay gradient */}
       <div
-        className={`absolute inset-0 bg-gradient-card transition-opacity duration-400 ${
-          isComplete ? "opacity-30" : ""
+        className={`absolute inset-0 bg-gradient-card transition-opacity duration-1000 ${
+          isComplete ? "opacity-20" : ""
         }`}
       />
 
